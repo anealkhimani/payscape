@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Important Quesiton</title>
+		<script type = 'text/javascript' src = 'https://code.jquery.com/jquery-3.1.0.min.js'></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	</head>
+	<body ng-app="someApp">
+		<!-- Stuff here -->
+		<div ng-controller="someCtrl">
+			<button class = "btn btn-primary loader_button" ng-click="loadCredits(1748)">Load Shatner</button>
+			<button class = "btn btn-primary loader_button" ng-click="loadCredits(2387)">Load Stewart</button>
+			<div id = "display">
+				<ul>
+					<li ng-repeat="credit in credits">
+						{{credit.title}},{{credit.character}}
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="js/choose.js"></script>
+<script type = 'text/javascript'>		
+	$(document).ready(function() {
+
+	});
+</script>

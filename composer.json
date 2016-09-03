@@ -1,0 +1,14 @@
+{
+    "name": "anealkhimani/payscape",
+    "description": "payscape_code_test",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Aneal Khimani",
+            "email": "anealkhimani@gmail.com"
+        }
+    ],
+    "require": {
+        "php-tmdb/api":"~2.0"
+    }
+}
