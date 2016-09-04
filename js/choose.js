@@ -38,7 +38,7 @@ app.controller("someCtrl", function($scope, $http) {
 	// Function to grab actor credits for a passed in id
 	$scope.loadCredits = function(id) {
 		$http.get("get_credits.php?id=" + id).success(function(data) {
-			console.log(data);
+			// console.log(data);
 			$scope.credits = data;
 		}).error(function() {
 			alert("something broke, you should make a better error handler");
@@ -48,7 +48,7 @@ app.controller("someCtrl", function($scope, $http) {
 	// function to grab a movie data for a passed in id
 	$scope.loadMovie = function(id) {
 		$http.get("get_movie.php?id=" + id).success(function(data) {
-			console.log(data);
+			// console.log(data);
 			alert("Overview: " + data.overview);
 		}).error(function() {
 			alert("something broke, you should make a better error handler");
