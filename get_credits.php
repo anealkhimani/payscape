@@ -20,7 +20,6 @@
 	// Retrieve credits for ID passed in via GET
 	$credits = isset($_GET['id']) ? $client->getPeopleApi()->getCredits($_GET['id']) : null;
 
-
 	// We're only interested in movies here, so filter out anything other than movies
 	if($credits) {
 		foreach($credits['cast'] as $p) {

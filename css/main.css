@@ -1,0 +1,33 @@
+body {
+font-family: 'Montserrat', sans-serif;
+background-image: url("/images/space.jpg");
+background-size:cover;
+}
+
+.avatar {
+	cursor:pointer;
+	padding:10px;
+	height:165px;
+}
+
+#header_row {
+	text-align: center;
+	background: rgba(240,240,240,0.5);
+	padding:15px;
+	border-radius: 15px;
+	margin-top:15px;
+	color:white;
+}
+
+#display_row {
+	margin-top:15px;
+}
+
+.panel-fancy {
+	display: inline-block;
+	margin:4px;
+}
+
+.movie_details {
+	list-style: none;
+}

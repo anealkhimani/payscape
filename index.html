@@ -2,29 +2,49 @@
 <html>
 	<head>
 		<title>The Important Quesiton</title>
-		<script type = 'text/javascript' src = 'https://code.jquery.com/jquery-3.1.0.min.js'></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body ng-app="someApp">
-		<!-- Stuff here -->
-		<div ng-controller="someCtrl">
-			<button class = "btn btn-primary loader_button" ng-click="loadCredits(1748)">Load Shatner</button>
-			<button class = "btn btn-primary loader_button" ng-click="loadCredits(2387)">Load Stewart</button>
-			<div id = "display">
-				<ul>
-					<li ng-repeat="credit in credits">
-						{{credit.title}},{{credit.character}}
-					</li>
-				</ul>
-			</div>
-		</div>
+		<div class = "container" id = "main_container" ng-controller="someCtrl">
+			<div class = "row" id = "header_row">
+				<h1>Choose Wisely</h1>
+				<div class = "row" id = "image_row">
+
+					<div ng-repeat="actor in actors" class = "col-md-2">
+						<img  class = "img-responsive img-thumbnail avatar" ng-src = "{{actor.image}}" ng-click = "loadCredits(actor.id)" /><br />
+						<span class = "actor_name">{{actor.name}}</span>
+					</div>
+
+				</div> <!-- End #image_row -->					
+			</div><!-- end of #header_row -->
+
+			<div class = "row" id = "display_row">
+				
+				<!-- Build a movie panel for each credit attributed to this actor -->
+				<div ng-repeat="credit in credits" class="panel panel-defualt panel-fancy">
+					<div class = "panel-heading">
+						<h3 class = "panel-title">{{credit.title}}</h3>
+					</div>
+					<div class = "panel-body row">
+						<div class = "col-md-2">
+							<img ng-src = "https://image.tmdb.org/t/p/w92{{credit.poster_path}}" onerror="this.src='images/none.jpg'" />
+						</div>
+						<div class = "col-md-10">
+							<ul class = "movie_details">
+								<li>Release Date: {{credit.release_date}}</li>
+								<li>Character: {{credit.character}}</li>
+								<li><button class = "btn btn-xs btn-primary" ng-click = "loadMovie(credit.id)">More Info</button>
+							</ul>
+						</div>
+					</div>
+				</div> <!-- End repeating Panel -->
+			</div> <!-- End #display_row -->
+		</div><!-- End of #main_container -->
 	</body>
 </html>
 
+<!-- Scripts here -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 <script src="js/choose.js"></script>
-<script type = 'text/javascript'>		
-	$(document).ready(function() {
-
-	});
-</script>
